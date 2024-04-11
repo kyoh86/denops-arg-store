@@ -62,8 +62,4 @@ export class ArgStore {
       ...override,
     };
   }
-
-  public ensureArgs<T>(func: string, pred: Predicate<T>, override?: Args): T {
-    return ensure(this.getArgs(func, override), pred);
-  }
 }
