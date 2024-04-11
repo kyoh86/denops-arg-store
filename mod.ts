@@ -5,15 +5,6 @@ import {
   PredicateType,
 } from "https://deno.land/x/unknownutil@v3.17.2/mod.ts";
 
-export function ensureArgs<T>(
-  argStore: ArgStore,
-  func: string,
-  uArgs: unknown,
-  pred: Predicate<T>,
-): T {
-  return ensure(argStore.getArgs(func, ensure(uArgs, isArgs)), pred);
-}
-
 export const isArgs = is.RecordOf(is.Unknown, is.String);
 export type Args = PredicateType<typeof isArgs>;
 
@@ -70,5 +61,9 @@ export class ArgStore {
       ...target,
       ...override,
     };
+  }
+
+  public ensureArgs<T>(func: string, pred: Predicate<T>, override?: Args): T {
+    return ensure(this.getArgs(func, override), pred);
   }
 }
