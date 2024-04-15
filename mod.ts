@@ -3,7 +3,7 @@ import {
   is,
   Predicate,
   PredicateType,
-} from "https://deno.land/x/unknownutil@v3.17.2/mod.ts";
+} from "https://deno.land/x/unknownutil@v3.18.0/mod.ts";
 
 export const isArgs = is.RecordOf(is.Unknown, is.String);
 export type Args = PredicateType<typeof isArgs>;
