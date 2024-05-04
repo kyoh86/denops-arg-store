@@ -126,7 +126,8 @@ export class ArgStore {
     denops: Denops,
     functionName: string,
     isArgs: Predicate<T>,
-    functionBody: (denops: Denops, args: T) => void | Promise<void>,
+    // deno-lint-ignore no-explicit-any
+    functionBody: (denops: Denops, args: T) => void | Promise<any>,
   ) {
     return (uArgs: unknown) => {
       return functionBody(denops, this.ensureArgs(functionName, isArgs, uArgs));
