@@ -1,10 +1,10 @@
-import { Denops } from "https://deno.land/x/denops_core@v6.0.5/mod.ts";
+import { Denops } from "https://deno.land/x/denops_core@v6.1.0/mod.ts";
 import {
   ensure,
   is,
   Predicate,
   PredicateType,
-} from "https://deno.land/x/unknownutil@v3.18.0/mod.ts";
+} from "https://deno.land/x/unknownutil@v3.18.1/mod.ts";
 
 export const isArgs = is.RecordOf(is.Unknown, is.String);
 export type Args = PredicateType<typeof isArgs>;
